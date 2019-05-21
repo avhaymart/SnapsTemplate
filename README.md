@@ -6,7 +6,7 @@
    * Avonlea Haymart
 
 * Project Description
-   * This project was created in one day. Usually with web designs, I would plan it, make a prototype, then code a webpage to match it. However, I decided to take a different route for this. Since the timeframe was so short, I simply just started coding and let my imagination mold the website. Here is the result. I learned the benefits of Google Devs' mobile simulation tools, brushed up on throttling, and some JavaScript DOM workarounds. Enjoy. :)
+   * This project was created in one day. Usually with web designs, I would plan it, make a prototype, then code a webpage to match it. However, I decided to take a different route for this. Since the timeframe was so short, I simply just started coding and let my imagination mold the website. Here is the result. I learned the benefits of Google Devs' mobile simulation tools, brushed up on throttling, and some JavaScript DOM workarounds. The point of this project was to create as much as I can work just vanilla css and jquery. (Bootstrap planning to be removed) Every visual effect and page component was hand coded from scratch to create the perfectly tweaked project that is this. Enjoy. :)
 
 * Technologies Used
   * HTML
