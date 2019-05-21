@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
     var menuToggle = $('#main-toggle');
     var menuOpen = false;
 
@@ -16,6 +17,56 @@ $(document).ready(function () {
             t === "0.25" ? scrollTextPulse("0.6") : scrollTextPulse("0.25");
         });
     }
+
+    var currentPage = 0;
+
+    function changePages(direction) {
+        switch (direction) {
+            case "up":
+                $(pages[currentPage]).animate({ top: "100%", opacity: 0 }, 700);
+                $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700)
+                currentPage--;
+                break;
+            case "down":
+                $(pages[currentPage]).animate({ top: "-100%", opacity: 0 }, 700);
+                $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700)
+                console.log(pages[currentPage])
+                currentPage++;
+                break;
+        }
+    }
+
+    var scrollThrottle = _.throttle(function (direction) {
+        // this is where code goes
+        switch (direction) {
+            case "up":
+                if (currentPage != 0) {
+                    changePages(direction);
+                }
+                if (currentPage === 2) {
+                    setTimeout(() => {
+                        $(".scroll-muted").css({ display: "block" });
+                    }, 500);
+                }
+                break;
+            case "down":
+                if (currentPage < 3) {
+                    changePages(direction)
+                    $(".scroll-muted").css({ display: "none" });
+                    if (currentPage !== 3) {
+                        setTimeout(() => {
+                            $(".scroll-muted").css({ display: "block" });
+                        }, 500);
+                    }
+                }
+                break;
+        }
+
+
+
+
+
+    }, 500, { trailing: false });
 
     // function for checking media query size
     function checkSize() {
@@ -57,18 +108,18 @@ $(document).ready(function () {
         }
     });
 
-    $("#side-toggle").on("click", () => {closeSideToggle()});
-    $("#side-nav-shadow").on("click", () => {closeSideToggle()});
 
-    var lastScrollTop = 0;
-    $("#page-wrapper").bind("scroll", function (event) {
-        var st = $(this).scrollTop();
-        if (st > lastScrollTop) {
-            console.log("scroll")
+    $("#side-toggle").on("click", () => { closeSideToggle() });
+    $("#side-nav-shadow").on("click", () => { closeSideToggle() });
+
+
+
+    $('#top-wrapper').bind('mousewheel', function (e) {
+        if (e.originalEvent.wheelDelta / 120 > 0) {
+            scrollThrottle("up");
         } else {
-            // upscroll code
+            scrollThrottle("down");
         }
-        lastScrollTop = st;
     });
 
 

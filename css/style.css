@@ -116,6 +116,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b74df9', end
     font-size: 24px;
 }
 
+#about-section {
+    z-index: 1;
+    position: absolute;
+    top:100%;
+    left: 0;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#info-section {
+    z-index: 1;
+    position: absolute;
+    top:100%;
+    left: 0;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-section {
+    z-index: 1;
+    position: absolute;
+    top:100%;
+    left: 0;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .scroll-muted {
     opacity: 0.5;
     text-transform: uppercase;
