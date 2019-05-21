@@ -27,7 +27,6 @@ body {
 }
 
 #side-nav {
-    padding: 20px;
     position: fixed;
     z-index: 100;
     right: 0;
@@ -36,6 +35,7 @@ body {
 }
 
 #side-toggle {
+    margin: 20px;
     display:none;
     float:right;
 }
@@ -57,7 +57,7 @@ nav {
 .nav-logo span {
     font-family: 'Bad Script', cursive;
     font-size: 0.5em;
-    color: rgb(78, 78, 78);
+    color: rgb(129, 102, 102);
 }
 
 /* Hero styles  */
