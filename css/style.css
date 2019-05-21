@@ -26,8 +26,8 @@ body {
     background-color: black;
     opacity: 0;
     position: absolute;
-    width: 100vh;
-    height: 100vw;
+    width: 100vw;
+    height: 100vh;
     z-index:99;
     display:none;
 }
@@ -45,6 +45,8 @@ body {
 #side-toggle {
     margin: 20px;
     display:none;
+    position:absolute;
+    right:0;
     float:right;
 }
 
@@ -260,6 +262,9 @@ the css applies to. */
     }
     #side-toggle {
         display:block;
+    }
+
+    #side-nav-content {
     }
 }
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
-    var gradients = [".hero-gradient",".about-gradient",".info-gradient",".contact-gradient"]
+    var gradients = [".hero-gradient", ".about-gradient", ".info-gradient", ".contact-gradient"]
     var images = ["./img/hero.png", "./img/about.png", "./img/info.png", "./img/contact.png"]
     var menuToggle = $('#main-toggle');
     var menuOpen = false;
@@ -27,24 +27,24 @@ $(document).ready(function () {
             case "up":
                 $(pages[currentPage]).animate({ top: "100%", opacity: 0 }, 700);
                 $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700);
-                $(gradients[currentPage]).animate({opacity:0}, 700);
-                $(gradients[currentPage - 1]).animate({opacity:1}, 700);
-                $(".background-image").animate({opacity:0},350,function(){
-                    $(".background-image").css({backgroundImage:`url(${images[currentPage-1]})`})
+                $(gradients[currentPage]).animate({ opacity: 0 }, 700);
+                $(gradients[currentPage - 1]).animate({ opacity: 1 }, 700);
+                $(".background-image").animate({ opacity: 0 }, 350, function () {
+                    $(".background-image").css({ backgroundImage: `url(${images[currentPage - 1]})` })
                     currentPage--;
                 });
-                $(".background-image").animate({opacity:1},350);
+                $(".background-image").animate({ opacity: 1 }, 350);
                 break;
             case "down":
                 $(pages[currentPage]).animate({ top: "-100%", opacity: 0 }, 700);
                 $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700);
-                $(gradients[currentPage]).animate({opacity:0}, 700);
-                $(gradients[currentPage + 1]).animate({opacity:1}, 700);
-                $(".background-image").animate({opacity:0},350,function(){
-                    $(".background-image").css({backgroundImage:`url(${images[currentPage+1]})`})
+                $(gradients[currentPage]).animate({ opacity: 0 }, 700);
+                $(gradients[currentPage + 1]).animate({ opacity: 1 }, 700);
+                $(".background-image").animate({ opacity: 0 }, 350, function () {
+                    $(".background-image").css({ backgroundImage: `url(${images[currentPage + 1]})` })
                     currentPage++;
                 });
-                $(".background-image").animate({opacity:1},350);
+                $(".background-image").animate({ opacity: 1 }, 350);
                 break;
         }
     }
@@ -53,32 +53,27 @@ $(document).ready(function () {
         // this is where code goes
         switch (direction) {
             case "up":
-                if (currentPage != 0) {
-                    changePages(direction);
-                }
-                if (currentPage === 2) {
+                if (currentPage === 3) {
                     setTimeout(() => {
                         $(".scroll-muted").css({ display: "block" });
                     }, 500);
                 }
+                if (currentPage != 0) {
+                    changePages(direction);
+                }
                 break;
             case "down":
                 if (currentPage < 3) {
-                    changePages(direction)
                     $(".scroll-muted").css({ display: "none" });
-                    if (currentPage !== 3) {
+                    if (currentPage !== 2) {
                         setTimeout(() => {
                             $(".scroll-muted").css({ display: "block" });
                         }, 500);
                     }
+                    changePages(direction)
                 }
                 break;
         }
-
-
-
-
-
     }, 500, { trailing: false });
 
     // function for checking media query size
