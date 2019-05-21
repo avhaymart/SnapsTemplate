@@ -8,7 +8,7 @@ body {
     padding: 0;
     box-sizing: border-box;    
     /* font-family: 'Dosis', sans-serif; */
-    color: #262626;
+    color: #252525;
     overflow: hidden;
 }
 
@@ -41,7 +41,7 @@ body {
     right: 0;
     overflow:hidden;
     width: 0;
-    background-color: #262626;
+    background-color: #ffffff;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -69,7 +69,7 @@ body {
     text-align:center;
     font-family: 'Architects Daughter', cursive;
     font-size:18px;
-    color: rgb(163, 163, 163);
+    color: rgb(80, 80, 80);
 }
 
 #side-nav-content div:first-child i {
@@ -84,8 +84,8 @@ body {
 #side-nav-footer img {
     float:right;
     width: 50%;
-    max-width: 200px;
-    opacity:0.25;
+    max-width: 240px;
+    opacity:0.2;
 }
 
 nav {
