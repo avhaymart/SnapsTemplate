@@ -10,6 +10,7 @@
   * HTML
   * CSS
   * jQuery
+  * lodash (for throttle)
 * Running the Code
   * Clone this GitHub repository into a directory of your choice.
   ```git clone https://github.com/avhaymart/SnapsTemplate.git```
