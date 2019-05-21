@@ -1,5 +1,7 @@
 # SnapsTemplate
 
+![Snaps Template](https://i.ibb.co/d0P5pFv/Screenshot-from-2019-05-21-02-42-40.png)
+
 * Team Members
    * Avonlea Haymart
 
@@ -10,7 +12,8 @@
   * HTML
   * CSS
   * jQuery
-  * lodash (for throttle)
+  * lodash
+  * Bootstrap (will probably remove from this project)
 * Running the Code
   * Clone this GitHub repository into a directory of your choice.
   ```git clone https://github.com/avhaymart/SnapsTemplate.git```
