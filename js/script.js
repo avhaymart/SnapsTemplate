@@ -1,6 +1,21 @@
 $(document).ready(function () {
-    var menuToggle = $('.hamburger');
+    var menuToggle = $('#main-toggle');
     var menuOpen = false;
+
+    function closeSideToggle() {
+        $("#side-nav-shadow").animate({ opacity: "0" }, 300, function () {
+            $("#side-nav-shadow").css({ display: "none" });
+        })
+        $('#side-nav').animate({ right: "-100%" }, 300);
+        $('#side-toggle').toggleClass("is-active");
+        menuOpen = !menuOpen;
+    }
+
+    function scrollTextPulse(t) {
+        $(".scroll-muted").animate({ opacity: t }, 650, function () {
+            t === "0.25" ? scrollTextPulse("0.6") : scrollTextPulse("0.25");
+        });
+    }
 
     // function for checking media query size
     function checkSize() {
@@ -33,10 +48,17 @@ $(document).ready(function () {
                 break;
             case "sm":
             case "xs":
-                console.log("too smol");
+                $('#side-nav-shadow').css({ display: "block" })
+                    .animate({ opacity: "0.5" }, 300);
+                $('#side-nav').animate({ right: "0%" }, 300);
+                $('#side-toggle').toggleClass("is-active");
+                menuOpen = !menuOpen;
                 break;
         }
     });
+
+    $("#side-toggle").on("click", () => {closeSideToggle()});
+    $("#side-nav-shadow").on("click", () => {closeSideToggle()});
 
     var lastScrollTop = 0;
     $("#page-wrapper").bind("scroll", function (event) {
@@ -49,10 +71,7 @@ $(document).ready(function () {
         lastScrollTop = st;
     });
 
-    function scrollTextPulse(t) {
-        $(".scroll-muted").animate({ opacity: t }, 650, function () {
-            t === "0.25" ? scrollTextPulse("0.6") : scrollTextPulse("0.25");
-        });
-    }
+
     scrollTextPulse("0.25");
+
 });
