@@ -16,26 +16,26 @@ $(document).ready(function () {
         }
     }
 
-    function loopdipoop(){
-        setTimeout(() => {
-            console.log(checkSize());
-            console.log($(".media-query").css("background-color"))
-            loopdipoop()
-        }, 1000);
-    }
-    loopdipoop();
-
     // Function for opening/closing the menu
     menuToggle.on('click', function () {
-        $(this).toggleClass('is-active');
-        if (menuOpen) {
-            $('#page-wrapper').animate({ marginRight: "0" }, 300);
-            $('#side-nav').animate({ width: "0" }, 300);
-        } else {
-            $('#page-wrapper').animate({ marginRight: "30%" }, 300);
-            $('#side-nav').animate({ width: "30%" }, 300);
+        switch (checkSize()) {
+            case "lg":
+            case "md":
+                $(this).toggleClass('is-active');
+                if (menuOpen) {
+                    $('#page-wrapper').animate({ marginRight: "0" }, 300);
+                    $('#side-nav').animate({ width: "0" }, 300);
+                } else {
+                    $('#page-wrapper').animate({ marginRight: "30%" }, 300);
+                    $('#side-nav').animate({ width: "30%" }, 300);
+                }
+                menuOpen = !menuOpen;
+                break;
+            case "sm":
+            case "xs":
+                console.log("too smol");
+                break;
         }
-        menuOpen = !menuOpen;
     });
 
     var lastScrollTop = 0;
