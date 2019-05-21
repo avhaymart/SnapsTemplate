@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+    /* font-family: 'Dosis', sans-serif; */
+    color: #262626;
+}
+
+/* Nav styles */
+
+.fixed {
+    background-color: white;
+    position: fixed;
+    top:0;
+    width:100%;
+}
+
+#side-nav {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    background-color: #262626;
+    height: 100vh;
+}
+
+nav {
+    height: 70px;
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.nav-logo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2em
+}
+
+.nav-logo span {
+    font-family: 'Bad Script', cursive;
+    font-size: 0.5em;
+    color: rgb(78, 78, 78);
+}
+
+/* Hero styles  */
+
+#hero-wrapper {
+    height: 100vh;
+    padding: 1%;
+    background: #b74df9; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #b74df9 0%, #cb8af7 0%, #8194eb 50%, #cb8af7 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #b74df9 0%,#cb8af7 0%,#8194eb 50%,#cb8af7 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #b74df9 0%,#cb8af7 0%,#8194eb 50%,#cb8af7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b74df9', endColorstr='#cb8af7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#hero-container {
+    position: relative;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    background-image: url("../img/hero.png");
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2% 10%;
+    border: 1px solid #c4c4c4;
+}
+
+#hero-section {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-section div:first-child {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-section div:first-child div i {
+    font-size: 24px;
+}
+
+.scroll-muted {
+    opacity: 0.5;
+    text-transform: uppercase;
+    font-family: monospace;
+    position: relative;
+    left: 50%;
+    margin-left: -50px;
+    width:100px;
+    bottom: 50px;
+}
+
+/* this class is a clever little way I figure out how to
+use media queries with jQuery, since the width of the
+window in jQuery doesn't always match the width of the media
+query in css. this class will color code based on the media query
+the css applies to. */
+
+.media-query {
+    background-color: red;
+}
+
+@media only screen and (max-width : 979px) {
+    .media-query {
+        background-color: green;
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .media-query {
+        background-color: blue;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .media-query {
+        background-color: purple;
+    }
+
+}
