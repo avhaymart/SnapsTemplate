@@ -130,6 +130,17 @@ $(document).ready(function () {
         }
     });
 
+    $("#top-wrapper").swipe( {
+        //Generic swipe handler for all directions
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          if (direction === "up" || direction == "down") {
+              direction === "up" ? scrollThrottle("down") : scrollThrottle("up")
+          }
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:75
+      });
+
 
     scrollTextPulse("0.25");
 
