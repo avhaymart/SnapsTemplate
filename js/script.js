@@ -59,8 +59,11 @@ $(document).ready(function () {
     function changePages(direction) {
         switch (direction) {
             case "up":
-                $(pages[currentPage]).animate({ top: "100%", opacity: 0 }, 700);
-                $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700);
+                setTimeout(() => {
+                    $(pages[currentPage - 1]).animate({ opacity: 1 }, 500);
+                }, 200);
+                $(pages[currentPage]).animate({ top: "100%", opacity: -2 }, 700);
+                $(pages[currentPage - 1]).animate({ top: "0" }, 700);
                 $(gradients[currentPage]).animate({ opacity: 0 }, 700);
                 $(gradients[currentPage - 1]).animate({ opacity: 1 }, 700);
                 $(".background-image").animate({ opacity: 0 }, 350, function () {
@@ -70,7 +73,8 @@ $(document).ready(function () {
                 $(".background-image").animate({ opacity: 1 }, 350);
                 break;
             case "down":
-                $(pages[currentPage]).animate({ top: "-100%", opacity: 0 }, 700);
+                // Setting opacity to -4 isn't the best way to do this, but it speeds up the process of lowering the opacity
+                $(pages[currentPage]).animate({ top: "-100%", opacity: -4 }, 700);
                 $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700);
                 $(gradients[currentPage]).animate({ opacity: 0 }, 700);
                 $(gradients[currentPage + 1]).animate({ opacity: 1 }, 700);
