@@ -1,6 +1,6 @@
 # SnapsTemplate
 
-![Snaps Template](https://i.ibb.co/d0P5pFv/Screenshot-from-2019-05-21-02-42-40.png)
+![Snaps Template](https://i.ibb.co/Mg94Z2Y/Screenshot-from-2019-05-21-03-50-36.png)
 
 * Team Members
    * Avonlea Haymart
