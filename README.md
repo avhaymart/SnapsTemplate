@@ -6,7 +6,7 @@
    * Avonlea Haymart
 
 * Project Description
-   * This project was created in one day. Usually with web designs, I would plan it, make a prototype, then code a webpage to match it. However, I decided to take a different route for this. Since the timeframe was so short, I simply just started coding and let my imagination mold the website. Here is the result. Enjoy. :)
+   * This project was created in one day. Usually with web designs, I would plan it, make a prototype, then code a webpage to match it. However, I decided to take a different route for this. Since the timeframe was so short, I simply just started coding and let my imagination mold the website. Here is the result. I learned the benefits of Google Devs' mobile simulation tools, brushed up on throttling, and some JavaScript DOM workarounds. Enjoy. :)
 
 * Technologies Used
   * HTML
