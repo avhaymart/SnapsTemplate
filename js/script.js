@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
     var gradients = [".hero-gradient",".about-gradient",".info-gradient",".contact-gradient"]
+    var images = ["./img/hero.png", "./img/about.png", "./img/info.png", "./img/contact.png"]
     var menuToggle = $('#main-toggle');
     var menuOpen = false;
 
@@ -28,14 +29,22 @@ $(document).ready(function () {
                 $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700);
                 $(gradients[currentPage]).animate({opacity:0}, 700);
                 $(gradients[currentPage - 1]).animate({opacity:1}, 700);
-                currentPage--;
+                $(".background-image").animate({opacity:0},350,function(){
+                    $(".background-image").css({backgroundImage:`url(${images[currentPage-1]})`})
+                    currentPage--;
+                });
+                $(".background-image").animate({opacity:1},350);
                 break;
             case "down":
                 $(pages[currentPage]).animate({ top: "-100%", opacity: 0 }, 700);
                 $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700);
                 $(gradients[currentPage]).animate({opacity:0}, 700);
                 $(gradients[currentPage + 1]).animate({opacity:1}, 700);
-                currentPage++;
+                $(".background-image").animate({opacity:0},350,function(){
+                    $(".background-image").css({backgroundImage:`url(${images[currentPage+1]})`})
+                    currentPage++;
+                });
+                $(".background-image").animate({opacity:1},350);
                 break;
         }
     }

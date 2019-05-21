@@ -36,6 +36,8 @@ body {
     position: fixed;
     z-index: 100;
     right: 0;
+    overflow:hidden;
+    width: 0;
     background-color: #262626;
     height: 100vh;
 }
@@ -44,6 +46,39 @@ body {
     margin: 20px;
     display:none;
     float:right;
+}
+
+#side-nav-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: flex-end;
+    height: 100vh;
+    padding:30px;
+}
+
+#side-nav-content div:first-child {
+    width:100%;
+    text-align:center;
+    font-family: 'Architects Daughter', cursive;
+    font-size:18px;
+    color: rgb(241, 241, 241);
+}
+
+#side-nav-content div:first-child i {
+    font-size:30px;
+    color: rgb(255, 23, 100);
+}
+
+#side-nav-footer {
+    
+}
+
+#side-nav-footer img {
+    float:right;
+    width: 50%;
+    max-width: 200px;
+    opacity:0.25;
 }
 
 nav {
@@ -78,13 +113,21 @@ nav {
     position: relative;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    background-image: url("../img/hero.png");
-    background-attachment: fixed;
-
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 2% 10%;
     border: 1px solid #c4c4c4;
+}
+
+.background-image {
+    opacity: 1;
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/hero.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
