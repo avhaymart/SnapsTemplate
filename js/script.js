@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
+    var gradients = [".hero-gradient",".about-gradient",".info-gradient",".contact-gradient"]
     var menuToggle = $('#main-toggle');
     var menuOpen = false;
 
@@ -24,13 +25,16 @@ $(document).ready(function () {
         switch (direction) {
             case "up":
                 $(pages[currentPage]).animate({ top: "100%", opacity: 0 }, 700);
-                $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700)
+                $(pages[currentPage - 1]).animate({ top: "0", opacity: 1 }, 700);
+                $(gradients[currentPage]).animate({opacity:0}, 700);
+                $(gradients[currentPage - 1]).animate({opacity:1}, 700);
                 currentPage--;
                 break;
             case "down":
                 $(pages[currentPage]).animate({ top: "-100%", opacity: 0 }, 700);
-                $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700)
-                console.log(pages[currentPage])
+                $(pages[currentPage + 1]).animate({ top: "0", opacity: 1 }, 700);
+                $(gradients[currentPage]).animate({opacity:0}, 700);
+                $(gradients[currentPage + 1]).animate({opacity:1}, 700);
                 currentPage++;
                 break;
         }
