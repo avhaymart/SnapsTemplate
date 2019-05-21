@@ -12,19 +12,11 @@ body {
     overflow: hidden;
 }
 
+/* Nav styles */
+
 .hamburger {
     padding-right:0;
 }
-
-#top-wrapper {
-    position: relative;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
-    overflow: hidden;
-}
-
-/* Nav styles */
 
 .fixed {
     background-color: white;
@@ -110,13 +102,16 @@ nav {
     margin: 0;
 }
 
-.nav-logo span {
-    font-family: 'Bad Script', cursive;
-    font-size: 0.5em;
-    color: rgb(129, 102, 102);
+/* Section styles  */
+
+#top-wrapper {
+    position: relative;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: hidden;
 }
 
-/* Hero styles  */
 
 #hero-wrapper {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
@@ -128,8 +123,8 @@ nav {
     position: relative;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    padding: 2% 10%;
-    border: 1px solid #c4c4c4;
+    padding: 2% 5%;
+    border: 1px solid #e0e0e0;
 }
 
 .background-image {
@@ -187,6 +182,8 @@ section {
     top:100%;
 }
 
+/* Scroll down text */
+
 .scroll-muted {
     opacity: 0.5;
     text-transform: uppercase;
@@ -219,11 +216,11 @@ section {
 
 .about-gradient {
     opacity:0;
-    background: #f9d963;
-    background: -moz-linear-gradient(-45deg, #f9d963 0%, #a6ef7f 50%, #f9d963 100%);
-    background: -webkit-linear-gradient(-45deg, #f9d963 0%,#a6ef7f 50%,#f9d963 100%);
-    background: linear-gradient(135deg, #f9d963 0%,#a6ef7f 50%,#f9d963 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9d963', endColorstr='#f9d963',GradientType=1 );
+    background: #d8c47a;
+    background: -moz-linear-gradient(-45deg, #d8c47a 0%, #a2d487 50%, #d8c47a 100%);
+    background: -webkit-linear-gradient(-45deg, #d8c47a 0%,##a2d487 50%,#d8c47a 100%);
+    background: linear-gradient(135deg, #d8c47a 0%,##a2d487 50%,#d8c47a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8c47a', endColorstr='#d8c47a',GradientType=1 );
 }
 
 .info-gradient {
@@ -266,7 +263,7 @@ the css applies to. */
         background-color: blue;
     }
     #hero-wrapper {
-        padding:3%;
+        padding:2%;
     }
     #side-nav {
         position:absolute;

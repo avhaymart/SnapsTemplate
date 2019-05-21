@@ -2,12 +2,43 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 $(document).ready(function () {
-    var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
-    var gradients = [".hero-gradient", ".about-gradient", ".info-gradient", ".contact-gradient"]
-    var images = ["./img/hero.jpg", "./img/about.jpg", "./img/info.jpg", "./img/contact.jpg"]
-    var menuToggle = $('#main-toggle');
-    var menuOpen = false;
+    const pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
+    const gradients = [".hero-gradient", ".about-gradient", ".info-gradient", ".contact-gradient"]
+    const images = ["./img/hero.jpg", "./img/about.jpg", "./img/info.jpg", "./img/contact.jpg"]
+    const menuToggle = $('#main-toggle');
+    let menuOpen = false;
+    let currentPage = 0;
 
+
+    let scrollThrottle = _.throttle(function (direction) {
+        // this is where code goes
+        switch (direction) {
+            case "up":
+                if (currentPage === 3) {
+                    setTimeout(() => {
+                        $(".scroll-muted").css({ display: "block" });
+                    }, 500);
+                }
+                if (currentPage != 0) {
+                    changePages(direction);
+                }
+                break;
+            case "down":
+                if (currentPage < 3) {
+                    $(".scroll-muted").css({ display: "none" });
+                    if (currentPage !== 2) {
+                        setTimeout(() => {
+                            $(".scroll-muted").css({ display: "block" });
+                        }, 500);
+                    }
+                    changePages(direction)
+                }
+                break;
+        }
+    }, 1000, { trailing: false });
+
+    // For closing the menu when the page is sm or xs
+    // because sm or xs has a different button for the menu
     function closeSideToggle() {
         $("#side-nav-shadow").animate({ opacity: "0" }, 300, function () {
             $("#side-nav-shadow").css({ display: "none" });
@@ -17,14 +48,14 @@ $(document).ready(function () {
         menuOpen = !menuOpen;
     }
 
+    // For making the scroll text pulse c:
     function scrollTextPulse(t) {
         $(".scroll-muted").animate({ opacity: t }, 650, function () {
             t === "0.25" ? scrollTextPulse("0.6") : scrollTextPulse("0.25");
         });
     }
 
-    var currentPage = 0;
-
+    // Probably needs work
     function changePages(direction) {
         switch (direction) {
             case "up":
@@ -51,33 +82,6 @@ $(document).ready(function () {
                 break;
         }
     }
-
-    var scrollThrottle = _.throttle(function (direction) {
-        // this is where code goes
-        switch (direction) {
-            case "up":
-                if (currentPage === 3) {
-                    setTimeout(() => {
-                        $(".scroll-muted").css({ display: "block" });
-                    }, 500);
-                }
-                if (currentPage != 0) {
-                    changePages(direction);
-                }
-                break;
-            case "down":
-                if (currentPage < 3) {
-                    $(".scroll-muted").css({ display: "none" });
-                    if (currentPage !== 2) {
-                        setTimeout(() => {
-                            $(".scroll-muted").css({ display: "block" });
-                        }, 500);
-                    }
-                    changePages(direction)
-                }
-                break;
-        }
-    }, 500, { trailing: false });
 
     // function for checking media query size
     function checkSize() {
@@ -119,12 +123,13 @@ $(document).ready(function () {
         }
     });
 
-
     $("#side-toggle").on("click", () => { closeSideToggle() });
     $("#side-nav-shadow").on("click", () => { closeSideToggle() });
 
-
-
+    // For handling scroll events.
+    // mousewheel is used instead of scroll because
+    // the page doesn't have any content to scroll through...
+    // so technically the page isn't scrolling
     $('#top-wrapper').bind('mousewheel', function (e) {
         if (e.originalEvent.wheelDelta / 120 > 0) {
             scrollThrottle("up");
@@ -133,18 +138,16 @@ $(document).ready(function () {
         }
     });
 
+    // For mobile compatibility
     $("#top-wrapper").swipe({
-        //Generic swipe handler for all directions
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+        swipe: function (event, direction) {
             if (direction === "up" || direction == "down") {
                 direction === "up" ? scrollThrottle("down") : scrollThrottle("up")
             }
         },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
         threshold: 75
     });
 
-
+    // call the scrolltextpulse
     scrollTextPulse("0.25");
-
 });
