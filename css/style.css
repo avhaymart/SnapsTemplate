@@ -1,5 +1,10 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    height: 100%;
     padding: 0;
     box-sizing: border-box;    
     /* font-family: 'Dosis', sans-serif; */
@@ -13,7 +18,8 @@ body {
 
 #top-wrapper {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     overflow: hidden;
 }
@@ -32,7 +38,7 @@ body {
     opacity: 0;
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
     z-index:99;
     display:none;
 }
@@ -44,7 +50,7 @@ body {
     overflow:hidden;
     width: 0;
     background-color: #262626;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
 }
 
 #side-toggle {
@@ -60,7 +66,7 @@ body {
     flex-direction:column;
     justify-content:space-between;
     align-items: flex-end;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
     padding:30px;
 }
 
@@ -113,7 +119,7 @@ nav {
 /* Hero styles  */
 
 #hero-wrapper {
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
     padding: 1%;
   
 }
@@ -197,7 +203,7 @@ section {
     position:absolute;
     top:0;
     left:0;
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */   height: calc(var(--vh, 1vh) * 100);
     width:100vw;
     padding: 1%;
 }
@@ -231,11 +237,11 @@ section {
 
 .contact-gradient {
     opacity:0;
-    background: #ff6666;
-background: -moz-linear-gradient(-45deg, #ff6666 0%, #f785e2 50%, #ff6666 100%);
-background: -webkit-linear-gradient(-45deg, #ff6666 0%,#f785e2 50%,#ff6666 100%);
-background: linear-gradient(135deg, #ff6666 0%,#f785e2 50%,#ff6666 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6666', endColorstr='#ff6666',GradientType=1 );
+    background: #395994;
+background: -moz-linear-gradient(-45deg, #395994 0%, #8b42bd 50%, #395994 100%);
+background: -webkit-linear-gradient(-45deg, #395994 0%,#8b42bd 50%,#395994 100%);
+background: linear-gradient(135deg, #395994 0%,#8b42bd 50%,#395994 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#395994', endColorstr='#395994',GradientType=1 );
 }
 
 /* this class is a clever little way I figure out how to
