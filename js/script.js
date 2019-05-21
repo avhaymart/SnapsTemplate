@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var pages = ["#hero-section", "#about-section", "#info-section", "#contact-section"]
     var gradients = [".hero-gradient", ".about-gradient", ".info-gradient", ".contact-gradient"]
-    var images = ["./img/hero.png", "./img/about.png", "./img/info.png", "./img/contact.png"]
+    var images = ["./img/hero.jpg", "./img/about.jpg", "./img/info.jpg", "./img/contact.jpg"]
     var menuToggle = $('#main-toggle');
     var menuOpen = false;
 
